@@ -13,7 +13,7 @@ type player struct {
 func newPlayer(renderer *sdl.Renderer) (p player, err error) {
 	img, err := sdl.LoadBMP("res/sprites/player.bmp")
 	if err != nil {
-		return player{}, fmt.Errorf("loading player sprite: %v, err")
+		return player{}, fmt.Errorf("loading player sprite: %v", err)
 	}
 	defer img.Free()
 	p.tex, err = renderer.CreateTextureFromSurface(img)
