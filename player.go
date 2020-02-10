@@ -57,6 +57,7 @@ func (p *player) update() {
 		if time.Since(p.lastShot) >= playerShotCooldown {
 			p.shoot(p.x+25, p.y-20)
 			p.shoot(p.x-25, p.y-20)
+
 			p.lastShot = time.Now()
 		}
 	}

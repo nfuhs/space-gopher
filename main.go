@@ -8,7 +8,7 @@ import (
 
 const (
 	screenWidth  = 600
-	screenHeight = 800
+	screenHeight = 600
 )
 
 func textureFromBMP(renderer *sdl.Renderer, filename string) *sdl.Texture {
@@ -32,7 +32,7 @@ func main() {
 	}
 
 	window, err := sdl.CreateWindow(
-		"Space Gopher",
+		"Gaming in Go Episode 2",
 		sdl.WINDOWPOS_UNDEFINED, sdl.WINDOWPOS_UNDEFINED,
 		screenWidth, screenHeight,
 		sdl.WINDOW_OPENGL)
@@ -79,13 +79,15 @@ func main() {
 		plr.draw(renderer)
 		plr.update()
 
+		for _, enemy := range enemies {
+			enemy.draw(renderer)
+		}
+
 		for _, bul := range bulletPool {
 			bul.draw(renderer)
 			bul.update()
 		}
 
 		renderer.Present()
-
 	}
-
 }

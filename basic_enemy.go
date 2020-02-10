@@ -16,6 +16,7 @@ func newBasicEnemy(renderer *sdl.Renderer, x, y float64) (be basicEnemy) {
 
 	be.x = x
 	be.y = y
+
 	return be
 }
 
